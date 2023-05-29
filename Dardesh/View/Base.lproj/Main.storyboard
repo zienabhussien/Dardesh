@@ -301,14 +301,14 @@
                             <tableViewSection footerTitle="" id="P5F-iT-B8V">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="83x-OU-Tnj">
-                                        <rect key="frame" x="0.0" y="208" width="393" height="51.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="208" width="393" height="50.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="83x-OU-Tnj" id="WKo-9l-9GS">
-                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="51.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="50.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tf-2E-Z4I">
-                                                    <rect key="frame" x="10" y="8" width="142.66666666666666" height="35.333333333333336"/>
+                                                    <rect key="frame" x="10" y="8" width="142.66666666666666" height="34.666666666666664"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Tell a friend"/>
                                                     <connections>
@@ -325,14 +325,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="sMV-ar-sfm">
-                                        <rect key="frame" x="0.0" y="259.33333206176758" width="393" height="51"/>
+                                        <rect key="frame" x="0.0" y="258.66666793823242" width="393" height="51.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sMV-ar-sfm" id="k3w-Lg-oUK">
-                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="51.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgJ-Ri-vnf">
-                                                    <rect key="frame" x="10" y="8" width="342.66666666666669" height="35"/>
+                                                    <rect key="frame" x="10" y="8" width="342.66666666666669" height="35.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Termis and conditions"/>
                                                     <connections>
@@ -353,7 +353,7 @@
                             <tableViewSection id="xBC-e2-shw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="N5J-xA-fgz">
-                                        <rect key="frame" x="0.0" y="388.33333206176758" width="393" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="388" width="393" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N5J-xA-fgz" id="0og-lz-MrK">
                                             <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="42.666667938232422"/>
@@ -375,7 +375,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="9u7-kZ-zhB">
-                                        <rect key="frame" x="0.0" y="431" width="393" height="48.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="430.66666793823242" width="393" height="48.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9u7-kZ-zhB" id="yD7-3C-PN3">
                                             <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="48.333332061767578"/>
@@ -539,11 +539,41 @@
                         <outlet property="statusLbl" destination="9HH-iH-dUP" id="iql-Nm-FWI"/>
                         <outlet property="userImageView" destination="Bqi-DM-Wyt" id="sob-eR-MBz"/>
                         <outlet property="usernameTextField" destination="p62-Wn-20j" id="Ytw-Mj-ywE"/>
+                        <segue destination="qWH-5y-vsw" kind="show" identifier="editProfileToStatusSegue" id="jqj-tV-wjw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfE-3f-UqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3209.9236641221373" y="1756.3380281690143"/>
+        </scene>
+        <!--Status Table View Controller-->
+        <scene sceneID="G0K-U1-cfs">
+            <objects>
+                <tableViewController id="qWH-5y-vsw" customClass="StatusTableViewController" customModule="Dardesh" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BNd-wh-UB3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="ColorTableView"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="2Ac-U4-FWc">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ac-U4-FWc" id="UfV-hR-PoX">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qWH-5y-vsw" id="R3j-vy-LxD"/>
+                            <outlet property="delegate" destination="qWH-5y-vsw" id="zh7-kN-93d"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="GYY-yc-t8O"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0i-E2-mzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3982" y="1756"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Z55-qy-daG">

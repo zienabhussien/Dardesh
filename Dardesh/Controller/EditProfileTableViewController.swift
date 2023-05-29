@@ -20,10 +20,15 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = nil
-        showUserInfo()
+        
         configureTextField()
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        showUserInfo()
+        tableView.reloadData()
+    }
     @IBAction func editBtnAction(_ sender: UIButton) {
         showImageGallery()
     }
@@ -35,8 +40,11 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
             usernameTextField.text = user.userName
             statusLbl.text = user.status
             
-            if user.avatarLink != ""{
-                // set user image
+            if user.avatarLink != "" {
+                // download and set avatar image
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { avatarLink in
+                    self.userImageView.image = avatarLink?.circleMasked
+                }
             }
         }
     }
@@ -83,10 +91,32 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     
+    
+   private func uploadAvatarImage(image: UIImage){
+       let fileDirectory = "Avatars/" + "_\(User.currentId)" + ".jpg"
+       
+       FileStorage.uploadImage(image, directory: fileDirectory) { avatarLink in
+           if var user = User.currentUser{
+               user.avatarLink = avatarLink ?? ""
+               saveUserLocally(user)
+               FUserListener.shared.saveUserToFireStore(user)
+           }
+        
+           FileStorage.saveFileLocally(fileData: image.jpegData(compressionQuality: 0.5)! as NSData, fileName: User.currentId)
+       }
+    }
 
     
     // MARK: - Table view data source
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.row == 0{
+            performSegue(withIdentifier: "editProfileToStatusSegue", sender: self)
+        }
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 || section == 1 ? 0.0 : 0.20
     }
@@ -95,11 +125,6 @@ class EditProfileTableViewController: UITableViewController, UITextFieldDelegate
         return 0.0
     }
    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor(named: "ColorTableView")
-        return headerView
-    }
 
 }
 
@@ -109,10 +134,11 @@ extension EditProfileTableViewController : GalleryControllerDelegate{
         
         if images.count > 0 {
             images.first?.resolve(completion: { avatarImage in
-                if kCTFontTableAvar != nil {
+                if avatarImage != nil {
                     // TODO:- Upload image
-                    
+                    self.uploadAvatarImage(image: avatarImage!)
                     self.userImageView.image = avatarImage
+                    
                 }else{
                     ProgressHUD.showError("Couldn't select image")
                 }

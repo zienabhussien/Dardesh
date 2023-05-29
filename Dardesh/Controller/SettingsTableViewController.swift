@@ -19,13 +19,12 @@ class SettingsTableViewController: UITableViewController {
         
         tableView.tableFooterView = nil
         
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        showUserInfo() 
+        showUserInfo()
     }
-    
     @IBAction func tellAfriendBtnAction(_ sender: UIButton) {
     }
     
@@ -56,9 +55,12 @@ class SettingsTableViewController: UITableViewController {
             
             if user.avatarLink != "" {
                 // download and set avatar image
+                FileStorage.downloadImage(imageUrl: user.avatarLink) { avatarImage in
+                    self.userImageView.image = avatarImage?.circleMasked
+                }
             }
         }
-            
+        
     }
     
  
